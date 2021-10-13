@@ -1,0 +1,239 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+.Container{
+    max-width: 1350px;
+    height: auto;
+}
+
+.container_left{
+    /* width: 150px; */
+    /* height: 608px; */
+    min-height: 608px;
+    max-height: 100%;
+    border-right: 2px solid #C4C4C4;
+}
+
+.container_left-header{
+    /* width: 150px; */
+    height: auto;
+}
+
+.container_left-header img{
+    width: 130px;
+    height: 50px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.container_left-body{
+    margin: 20px 0 0 30px;
+}
+
+.container_left-body-btn{
+    width: 160px;
+    height: 40px;
+    background-color: var(--button_update);
+    font-size: var(--button_font);
+    color: #ffff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.header_right-btn_user:hover,
+.container_left-body-btn:hover{
+    opacity: 0.8;
+}
+
+.container_right-header{
+    border-bottom: 2px solid #C4C4C4;
+    width: auto;
+    height: 65px;
+    margin-left: -16px;
+}
+
+.container_right-header-TT{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    font-size: var(--font_text);
+}
+
+.header_right-icon_user{
+    width: 45px;
+    height: 45px;
+    margin: 10px 10px;
+}
+
+.header_right-name_user{
+    line-height: 40px;
+    margin: 10px 10px;
+}
+
+.header_right-btn_user{
+    width: var(--button_width);
+    height: var(--button_height);
+    background-color: var(--button_update);
+    color: #ffff;
+    font-size: var(--button_font);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 10px 20px;
+}
+
+.container_right-body-controller,
+.container_right-body{
+    margin-top: 15px;
+}
+
+.container_right-body-intro{
+    width: auto;
+    height: 80px;
+    background-color: #E5E7EB;
+}
+
+.container_right-body-intro h2{
+    line-height: 70px;
+    padding-left: 30px;
+}
+
+.container_right-body-controller{
+    width: auto;
+    min-height: 285px;
+    max-height: 100%;
+    background-color: #E5E7EB;
+}
+
+.container_right-body-controller-header{
+    width: auto;
+    height: 55px;
+    /* background-color: aquamarine; */
+}
+
+.container_right-body-controller-header-left{
+    width: 50%;
+    height: auto;
+    /* background-color: #E5E7; */
+    padding-top: 15px;
+    float: left;
+}
+
+.plus{
+    font-size: 30px;
+    color: #22C55E;
+    margin: 0 20px;
+}
+
+.container_right-body-controller-header-left a{
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 10px;
+    color: #22C55E;
+}
+
+.container_right-body-controller-header-right{
+    width: 50%;
+    height: auto;
+    /* background-color: #E5EB; */
+    float: right;
+}
+
+.cbb{
+    width: 110px !important;
+    height: 30px !important;
+    float: right;
+    margin-top: 16px;
+    margin-right: 2px;
+}
+
+.container_right-body-controller-table{
+    font-size: var(--font_text);
+    text-align: center;
+}
+
+.btn_add{
+    width: 80px;
+    height: 30px;
+    font-size: 14px !important;
+}
+
+.button_update{
+    text-decoration: none;
+    margin: 5px 10px;
+    color: var(--button_update);
+}
+
+.button_edit{
+    text-decoration: none;
+    margin: 5px 10px;
+    color: var(--button_del);
+}
+
+.container_right-body-footer{
+    margin-top: 20px;
+}
+
+/* modal add */
+.model_add{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.model_add.open{
+    display: flex;
+}
+
+.model_add-container{
+    width: 500px;
+    height: 300px;
+    background-color: #ffff;
+    border-radius: 10px;
+    margin-top: 10%;
+    font-size: var(--font_text);
+    margin-top: -20px;
+    animation: showModalFadeIn ease .6s;
+}
+
+.model_add-container h2{
+    text-align: center;
+}
+
+.btn_submit{
+    float: right;
+    width: 70px;
+    height: 40px;
+}
+
+.btn_exit{
+    float: right;
+    width: 70px;
+    height: 40px;
+    margin: 0 10px;
+    background-color: var(--button_del);
+}
+
+.input-form{
+    width: 400px !important;
+    height: 30px !important;
+    margin-left: 30px;
+}
+
+.cbb_model{
+    height: 30px !important;
+    width: 400px !important;
+    font-size: 14px !important;
+    margin-top: 25px;
+    margin-left: 16px;
+}
+
+.container_form{
+    padding: 30px 20px;
+}

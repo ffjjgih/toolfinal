@@ -1,0 +1,77 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --header_color: #22313f;
+    --header_height: 80px;
+
+    --button_width: 113px;
+    --button_height: 45px;
+    --button_add: #0db04b;
+    --button_update: #0066b2;
+    --button_del: #d91e18;
+    --button_find: #f27123;
+    --button_font: 15px;
+
+    --font_text: 14px;
+}
+
+@keyframes showModalFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header{
+    width: 100%;
+    height: var(--header_height);
+    background-color: var(--header_color);
+    z-index: 1;
+    position: relative;
+}
+
+.header_img{
+    width: 160px;
+    height: 58px;
+    margin-top: 12px;
+    margin-left: -30px;
+}
+
+.header_img:hover{
+    cursor: pointer;
+}
+
+.header_icon_user{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 0;
+    margin-right: 220px;
+    margin-top: 15px;
+}
+
+.header_right-btn_user:hover {
+    opacity: 0.8;
+}
+.header_right-btn_user{
+    width: var(--button_width);
+    height: var(--button_height);
+    background-color: var(--button_update);
+    color: #ffff;
+    font-size: var(--button_font);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    float: right;
+    margin-top: 18px;
+}

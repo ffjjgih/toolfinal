@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/main/java/Dao/Dao.java=UTF-8
+encoding//src/main/java/Dao/Daokithi.java=UTF-8
+encoding//src/main/java/Services/ReadFileQuiz.java=UTF-8
+encoding//src/main/java/Services/Readfilediemdanh.java=UTF-8
+encoding//src/main/java/Services/Readfilekht.java=UTF-8
+encoding//src/main/java/Services/Readfileonline.java=UTF-8
+encoding//src/main/java/Services/Uploaddsthi.java=UTF-8
+encoding//src/main/java/controller/Home.java=UTF-8
+encoding//src/main/java/controller/ReadDiemOnline.java=UTF-8
+encoding//src/main/java/controller/ReadFile.java=UTF-8
+encoding//src/main/java/controller/Readlsistmark.java=UTF-8
+encoding//src/main/java/controller/SearchKHTController.java=UTF-8
+encoding//src/main/java/controller/UpdateKHTController.java=UTF-8
+encoding//src/main/java/controller/Uploadkht.java=UTF-8
+encoding//src/main/webapp/views/loadToUpdate.jsp=UTF-8

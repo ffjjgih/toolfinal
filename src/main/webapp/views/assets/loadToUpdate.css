@@ -1,0 +1,33 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+
+.container{
+    width: auto;
+    height: auto;
+    /* background-color: aqua; */
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+p.label_text{
+    text-align: right;
+    padding-right: 50px;
+}
+
+.input_control{
+    height: 40px !important; 
+    border: 1px solid black !important;
+    font-size: var(--font-text) !important;
+}
+
+.update_btn{
+    float: right;
+    margin-right: 100px !important;
+    width: var(--button_width);
+    height: var(--button_height);
+    font-size: var(--button_font) !important;
+}
+
+.title{
+    margin-top: -35px;
+    margin-left: -70px;
+}
