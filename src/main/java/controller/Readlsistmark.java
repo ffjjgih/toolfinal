@@ -90,7 +90,7 @@ public class Readlsistmark extends HttpServlet {
 			if (loaimon.equalsIgnoreCase("option2")) {
 				try {
 					int countonl=this.online.kiemTra(fileContent);
-					if (countonl != 3) {
+					if (countonl == 4) {
 						this.lstsvcamthi = this.online.xuatsvcamthi();
 						this.lstsvthi = this.online.xuatsvthi();
 					} else {
@@ -110,7 +110,7 @@ public class Readlsistmark extends HttpServlet {
 			} else if (loaimon.equalsIgnoreCase("option3")) {
 				try {
 					int countdd=this.diemdanh.kiemTra(fileContent) ;
-					if (countdd> 0) {
+					if (countdd == 3) {
 						this.lstsvcamthi = this.diemdanh.xuatsvcamthi();
 						this.lstsvthi = this.diemdanh.xuatsvthi();
 					} else {
@@ -130,7 +130,7 @@ public class Readlsistmark extends HttpServlet {
 			} else {
 				try {
 					int count=this.quiz.kiemTraQuiz(fileContent);
-					if ( count> 0) {
+					if ( count ==88) {
 						this.lstsvcamthi = this.quiz.getListSinhVienCamThi();
 						this.lstsvthi = this.quiz.getListSinhVienDiThi();
 					} else {

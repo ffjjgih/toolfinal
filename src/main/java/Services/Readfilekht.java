@@ -20,11 +20,10 @@ public class Readfilekht {
 	private ArrayList<DsThi> lst;
 
 	public Readfilekht() {
-		this.lst = new ArrayList<>();
+		this.lst = new ArrayList<DsThi>();
 	}
 
 	public ArrayList<DsThi> read(InputStream namefile, KiHoc k) {
-		List<Integer> dscolumndiem = new ArrayList<>();
 		String loaithi, block, ki, lop, tenmon, giangvien;
 		try {
 			String mamon, mamonhoc, phongthi;
@@ -35,18 +34,6 @@ public class Readfilekht {
 			XSSFWorkbook workbook = new XSSFWorkbook(namefile);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			Iterator<Row> iterator = sheet.iterator();
-			sheet.getRow(1).forEach(cellkht -> {
-				if (cellkht.getStringCellValue().equalsIgnoreCase("ngày thi")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("Ca")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("phòng thi")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("mã môn")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("lớp")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("loại thi")
-						|| cellkht.getStringCellValue().equalsIgnoreCase("tên môn")) {
-					dscolumndiem.add(cellkht.getColumnIndex());
-
-				}
-			});
 			while (iterator.hasNext()) {
 				Row row = iterator.next();
 				ki = sheet.getRow(0).getCell(0).getStringCellValue();

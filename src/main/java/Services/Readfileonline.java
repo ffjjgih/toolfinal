@@ -24,38 +24,38 @@ public class Readfileonline {
 	private Cell cell;
 
 	public Readfileonline() {
-		this.listSinhVien = new ArrayList<>();
-		this.listSVThi = new ArrayList<>();
-		this.ListSVcamthi = new ArrayList<>();
+		this.listSinhVien = new ArrayList<SinhVien>();
+		this.listSVThi = new ArrayList<SinhVien>();
+		this.ListSVcamthi = new ArrayList<SinhVien>();
 		this.sv = new SinhVien();
 	}
 
 	public Integer kiemTra(InputStream fileName) throws IOException {
-		List<Integer> listColumn = new ArrayList<>();
+		List<Integer> listColumn = new ArrayList<Integer>();
 		Sheet sheet = this.createSheet(fileName);
 		Iterator<Row> iterator = this.createIterator(sheet);
-		sheet.getRow(6).forEach(cellHeader -> {
-			if (cellHeader.getStringCellValue().equalsIgnoreCase("Bài Học Online")) {
-				sheet.getRow(6).forEach(Cellmssv -> {
-					if (Cellmssv.getStringCellValue().equalsIgnoreCase("MSSV")) {
-						listColumn.add(Cellmssv.getColumnIndex());
+		for(Cell x:sheet.getRow(6)) {
+			if (x.getStringCellValue().equalsIgnoreCase("Bài Học Online")) {
+				for(Cell y:sheet.getRow(6)) {
+					if (y.getStringCellValue().equalsIgnoreCase("MSSV")) {
+						listColumn.add(y.getColumnIndex());
 					}
-				});
-				sheet.getRow(6).forEach(cellname -> {
-					if (cellname.getStringCellValue().equalsIgnoreCase("Họ Và Tên")) {
-						listColumn.add(cellname.getColumnIndex());
+				};
+				for(Cell y:sheet.getRow(6)) {
+					if (y.getStringCellValue().equalsIgnoreCase("Họ Và Tên")) {
+						listColumn.add(y.getColumnIndex());
 					}
-				});
-				sheet.getRow(6).forEach(cellonline -> {
-					if (cellonline.getStringCellValue().equalsIgnoreCase("Bài Học Online")) {
-						listColumn.add(cellonline.getColumnIndex());
+				};
+				for(Cell y:sheet.getRow(6)) {
+					if (y.getStringCellValue().equalsIgnoreCase("Bài Học Online")) {
+						listColumn.add(y.getColumnIndex());
 					}
-				});
-				sheet.getRow(6).forEach(cellstatus -> {
-					if (cellstatus.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
-						listColumn.add(cellstatus.getColumnIndex());
+				};
+				for(Cell y:sheet.getRow(6)) {
+					if (y.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
+						listColumn.add(y.getColumnIndex());
 					}
-				});
+				};
 				try {
 					listSinhVien = this.docDiemOnline(iterator, listColumn);
 					this.checkDiemOnl(listSinhVien);
@@ -63,12 +63,12 @@ public class Readfileonline {
 					e.printStackTrace();
 				}
 			}
-		});
+		};
 		return listColumn.size();
 	}
 
 	public ArrayList<SinhVien> docDiemOnline(Iterator<Row> iteratorRow, List<Integer> listCell) {
-		ArrayList<SinhVien> listSV = new ArrayList<>();
+		ArrayList<SinhVien> listSV = new ArrayList<SinhVien>();
 		try {
 			while (iteratorRow.hasNext()) {
 				Row row = iteratorRow.next();
