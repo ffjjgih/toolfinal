@@ -25,7 +25,7 @@ public class Daokht extends Dao<DsThi> {
 
 	public Daokht() {
 		this.kht = new DsThi();
-		this.lstkht = new ArrayList<>();
+		this.lstkht = new ArrayList<DsThi>();
 		
 	}
 

@@ -22,9 +22,9 @@ public class Readfilediemdanh {
 	private Cell cell;
 	public Readfilediemdanh() {
 		this.sv = new SinhVien();
-		this.listSV = new ArrayList<>();
-		this.listThi = new ArrayList<>();
-		this.listSVDiemDanhFile = new ArrayList<>();
+		this.listSV = new ArrayList<SinhVien>();
+		this.listThi = new ArrayList<SinhVien>();
+		this.listSVDiemDanhFile = new ArrayList<SinhVien>();
 		this.lstsvcamthi=new ArrayList<SinhVien>();
 	}
 	public ArrayList<SinhVien> readDiemDanhFile(Iterator<Row> iteratorRow, List<Integer> listCell) {
@@ -64,24 +64,24 @@ public class Readfilediemdanh {
 	}
 
 	public Integer kiemTra(InputStream nameFile) throws IOException {
-		List<Integer> listColumn = new ArrayList<>();
+		List<Integer> listColumn = new ArrayList<Integer>();
 		XSSFSheet sheet = this.createSheet(nameFile);
 		Iterator<Row> iterator = this.createIterator(sheet);
-		sheet.getRow(6).forEach(cellmassv -> {
-			if (cellmassv.getStringCellValue().equalsIgnoreCase("MSSV")){
-				listColumn.add(cellmassv.getColumnIndex());
+		for(Cell x:sheet.getRow(6)) {
+			if (x.getStringCellValue().equalsIgnoreCase("MSSV")){
+				listColumn.add(x.getColumnIndex());
 			}
-		});
-		sheet.getRow(6).forEach(Cellname -> {
-			if ( Cellname.getStringCellValue().equalsIgnoreCase("Họ Và Tên")) {
-				listColumn.add(Cellname.getColumnIndex());
+		};
+		for(Cell x:sheet.getRow(6)) {
+			if ( x.getStringCellValue().equalsIgnoreCase("Họ Và Tên")) {
+				listColumn.add(x.getColumnIndex());
 			}
-		});
-		sheet.getRow(6).forEach(Cellstatus -> {
-			if (Cellstatus.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
-				listColumn.add(Cellstatus.getColumnIndex());
+		};
+		for(Cell x:sheet.getRow(6)) {
+			if (x.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
+				listColumn.add(x.getColumnIndex());
 			}
-		});
+		};
 		try {
 			listSV = this.readDiemDanhFile(iterator, listColumn);
 			this.checkDiemDanh(listSV);

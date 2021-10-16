@@ -48,7 +48,7 @@ public class Uploaddsthi {
 		XSSFWorkbook xssfw = new XSSFWorkbook();
 		XSSFRow row, row1, row2, row3, row4, row5, row6;
 		XSSFCell cellB, cellC, cellD, cellE, cellF, cellG, cellH;
-		ArrayList<SinhVien> lstsvkdt = new ArrayList<>();
+		ArrayList<SinhVien> lstsvkdt = new ArrayList<SinhVien>();
 		lstsvkdt.addAll(svcthi);
 		XSSFSheet sheet = xssfw.createSheet(lst.get(0).getNgayThi().toString());
 		for (int j = 0; j <= countcathi; j++) {

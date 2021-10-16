@@ -18,12 +18,12 @@ public class ReadFileQuiz {
 	private ArrayList<SinhVien> listSVCamThi;
 	private SinhVien sv;
 	private Cell cell;
-	private String lop, mamon, mua;
+	private String lop, mamon;
 
 	public ReadFileQuiz() {
-		this.listSinhVien = new ArrayList<>();
-		this.listSVThi = new ArrayList<>();
-		this.listSVCamThi = new ArrayList<>();
+		this.listSinhVien = new ArrayList<SinhVien>();
+		this.listSVThi = new ArrayList<SinhVien>();
+		this.listSVCamThi = new ArrayList<SinhVien>();
 	}
 
 	public Integer kiemTraQuiz(InputStream fileName) throws IOException {
@@ -31,30 +31,30 @@ public class ReadFileQuiz {
 		XSSFSheet sheet = this.createSheet(fileName);
 		Iterator<Row> iteratorRow = this.createIterator(sheet);
 
-		sheet.getRow(6).forEach(cellHeader -> {
-			if (cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 1")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 2")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 3")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 4")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 5")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 6")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 7")
-					|| cellHeader.getStringCellValue().equalsIgnoreCase("Quiz online 8")) {
-				sheet.getRow(6).forEach(cellQuiz -> {
-					if (cellQuiz.getStringCellValue().equalsIgnoreCase("MSSV")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Họ Và Tên")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 1")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 2")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 3")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 4")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 5")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 6")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 7")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Quiz online 8")
-							|| cellQuiz.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
-						listColumn.add(cellQuiz.getColumnIndex());
+		for (Cell x : sheet.getRow(6)) {
+			if (x.getStringCellValue().equalsIgnoreCase("Quiz online 1")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 2")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 3")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 4")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 5")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 6")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 7")
+					|| x.getStringCellValue().equalsIgnoreCase("Quiz online 8")) {
+				for (Cell y : sheet.getRow(6)) {
+					if (y.getStringCellValue().equalsIgnoreCase("MSSV")
+							|| y.getStringCellValue().equalsIgnoreCase("Họ Và Tên")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 1")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 2")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 3")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 4")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 5")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 6")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 7")
+							|| y.getStringCellValue().equalsIgnoreCase("Quiz online 8")
+							|| y.getStringCellValue().equalsIgnoreCase("Trạng Thái")) {
+						listColumn.add(y.getColumnIndex());
 					}
-				});
+				}
 				try {
 					this.listSinhVien = this.readDiemQuiz(iteratorRow, listColumn);
 					this.checkDieuKien(listSinhVien);
@@ -62,13 +62,13 @@ public class ReadFileQuiz {
 					e.printStackTrace();
 				}
 			}
-		});
+		}
 		return listColumn.size();
 	}
 
 	private ArrayList<SinhVien> readDiemQuiz(Iterator<Row> iterator, ArrayList<Integer> listInteger) {
 		double mark = 0;
-		ArrayList<SinhVien> lstSV = new ArrayList<>();
+		ArrayList<SinhVien> lstSV = new ArrayList<SinhVien>();
 		try {
 			while (iterator.hasNext()) {
 				Row row = iterator.next();
@@ -79,9 +79,6 @@ public class ReadFileQuiz {
 				}
 				if (row.getRowNum() == 3) {
 					mamon = row.getCell(3).getStringCellValue();
-				}
-				if (row.getRowNum() == 4) {
-					mua = row.getCell(3).getStringCellValue();
 				}
 				if (row.getRowNum() > 7) {
 					while (iteratorCell.hasNext()) {
@@ -128,7 +125,6 @@ public class ReadFileQuiz {
 				}
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return lstSV;
