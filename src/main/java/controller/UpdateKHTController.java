@@ -57,7 +57,7 @@ public class UpdateKHTController extends HttpServlet {
 			 
 			this.dao.update(kht);
 			request.setAttribute("suc", "UPDATE SUCCESSFUL!");
-			response.sendRedirect("http://localhost:8080/Toolpdt/Updatekihoc?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Updatekihoc?id=" + index);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("error", "INSERT FAIL, TRY AGAIN!");

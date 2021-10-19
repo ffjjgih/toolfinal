@@ -79,12 +79,12 @@ public class Readlsistmark extends HttpServlet {
 		if (fileName.length() == 0) {
 			int valueSes3 = 3;
 			this.setValueToSes(request, valueSes3);
-			response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 			return;
 		} else if (!fileName.contains("xlsx")) {
 			int valueSes4 = 4;
 			this.setValueToSes(request, valueSes4);
-			response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 			return;
 		} else {
 			if (loaimon.equalsIgnoreCase("option2")) {
@@ -96,14 +96,14 @@ public class Readlsistmark extends HttpServlet {
 					} else {
 						int valueSes5 = 5;
 						this.setValueToSes(request, valueSes5);
-						response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+						response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 						return;
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					int valueSes9 = 9;
 					this.setValueToSes(request, valueSes9);
-					response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+					response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 					return;
 				}
 				
@@ -116,14 +116,14 @@ public class Readlsistmark extends HttpServlet {
 					} else {
 						int valueSes6 = 6;
 						this.setValueToSes(request, valueSes6);
-						response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+						response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 						return;
 					}
 				}catch (Exception e) {
 					e.printStackTrace();
 					int valueSes9 = 9;
 					this.setValueToSes(request, valueSes9);
-					response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+					response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 					return;
 				}
 				
@@ -136,14 +136,14 @@ public class Readlsistmark extends HttpServlet {
 					} else {
 						int valueSes7 = 7;
 						this.setValueToSes(request, valueSes7);
-						response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+						response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 						return;
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					int valueSes9 = 9;
 					this.setValueToSes(request, valueSes9);
-					response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+					response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 				}
 				
 			}
@@ -155,7 +155,7 @@ public class Readlsistmark extends HttpServlet {
 				if (this.lstkht.size() == 0) {
 					int valueSes8 = 8;
 					this.setValueToSes(request, valueSes8);
-					response.sendRedirect("http://localhost:8080/Toolpdt/Readlsistmark?id=" + index);
+					response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + index);
 					return;
 
 				} else {

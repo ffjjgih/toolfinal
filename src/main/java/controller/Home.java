@@ -55,11 +55,11 @@ public class Home extends HttpServlet {
 		if(url.contains("insert")) {
 			insert(request, response);
 			KiHoc k1=this.kithi.getkihoc().get(0);
-			response.sendRedirect("http://localhost:8080/Toolpdt/Uploadkht?id="+k1.getIdhk());
+			response.sendRedirect(request.getContextPath()+"/Uploadkht?id="+k1.getIdhk());
 		}else if(url.contains("logout")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user1", null);
-			response.sendRedirect("http://localhost:8080/Toolpdt/login-google");
+			response.sendRedirect(request.getContextPath()+"/login-google");
 			return;
 		}
 		response.setContentType("text/html;charset=UTF-8");
