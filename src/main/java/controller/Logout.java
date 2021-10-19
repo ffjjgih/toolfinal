@@ -19,7 +19,7 @@ public class Logout extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.print("abc");
 		session.setAttribute("user1", null);
-		request.getRequestDispatcher("http://localhost:8080/Toolpdt/login-google").forward(request, response);
+		request.getRequestDispatcher(request.getContextPath()+"/login-google").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

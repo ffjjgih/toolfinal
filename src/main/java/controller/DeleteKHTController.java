@@ -25,7 +25,7 @@ public class DeleteKHTController extends HttpServlet {
 		int idKHT = Integer.parseInt(id);
 			dao.delete(idKHT);
 			request.setAttribute("suc", "DELETE SUCCESSFUL!");
-		response.sendRedirect("http://localhost:8080/Toolpdt/Updatekihoc?id="+index);
+		response.sendRedirect(request.getContextPath()+"/Updatekihoc?id="+index);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

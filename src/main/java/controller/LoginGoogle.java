@@ -41,7 +41,7 @@ public class LoginGoogle extends HttpServlet {
 		if (us != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user1", us);
-			response.sendRedirect("http://localhost:8080/Toolpdt/Home");
+			response.sendRedirect(request.getContextPath()+"/Home");
 		} else {
 			RequestDispatcher dis = request.getRequestDispatcher("/views/loginForm.jsp");
 			dis.forward(request, response);

@@ -83,24 +83,24 @@ public class Uploadkht extends HttpServlet {
 		if (fileName.length() == 0) {
 			int error3 = 3;
 			this.setValueToSes(request, error3);
-			response.sendRedirect("http://localhost:8080/Toolpdt/Uploadkht?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Uploadkht?id=" + index);
 			return;
 		} else if (!fileName.contains("xlsx")) {
-			response.sendRedirect("http://localhost:8080/Toolpdt/Uploadkht?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Uploadkht?id=" + index);
 			return;
 		} else {
 			lst = this.read.read(fileContent, kihoc);
 			if (lst.size() < 0) {
 				int error4 = 4;
 				this.setValueToSes(request, error4);
-				response.sendRedirect("http://localhost:8080/Toolpdt/Uploadkht?id=" + index);
+				response.sendRedirect(request.getContextPath()+"/Uploadkht?id=" + index);
 				return;
 			} else
 				delete(kihoc, index);
 			for (DsThi x : lst) {
 				this.daokht.insert(x);
 			}
-			response.sendRedirect("/Toolpdt/Readlsistmark?id=" + indexx);
+			response.sendRedirect(request.getContextPath()+"/Readlsistmark?id=" + indexx);
 		}
 	}
 

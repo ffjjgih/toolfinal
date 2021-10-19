@@ -34,7 +34,7 @@ public class Login implements Filter {
 		HttpServletResponse servletResponse = (HttpServletResponse) response;
 		Manageruser authUser = (Manageruser) servletRequest.getSession().getAttribute("user1");
 		if (authUser == null) {
-			((HttpServletResponse) response).sendRedirect("http://localhost:8080/Toolpdt/login-google");
+			((HttpServletResponse) response).sendRedirect("/Toolpdt/login-google");
 		} else {
 			chain.doFilter(servletRequest, response);
 		}

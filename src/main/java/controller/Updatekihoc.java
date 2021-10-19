@@ -57,7 +57,7 @@ public class Updatekihoc extends HttpServlet {
 			  this.kht.setNgayThi(request.getParameter("ngay"));
 			this.daokht.insert(kht);
 			request.setAttribute("suc", "Insert SUCCESSFUL!");
-			response.sendRedirect("http://localhost:8080/Toolpdt/Updatekihoc?id=" + index);
+			response.sendRedirect(request.getContextPath()+"/Updatekihoc?id=" + index);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("error", "INSERT FAIL, TRY AGAIN!");
